@@ -14,7 +14,7 @@ class Area(models.Model):
     """ """
     name = models.CharField(verbose_name="Name", max_length=50)
     is_free = models.BooleanField(verbose_name="Is free", default=False)
-    region = models.ForeignKey(verbose_name="Region", to="Region", on_delete=models.SET_NULL)
+    region = models.ForeignKey(verbose_name="Region", to="Region", on_delete=models.SET_NULL, null=True)
     latitude = models.DecimalField(verbose_name="Latitude", default=0, max_digits=20, decimal_places=18)
     longitude = models.DecimalField(verbose_name="Longitude", default=0, max_digits=21, decimal_places=18)
 

@@ -52,7 +52,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken'
+    # 'rest_framework.authtoken',
+    'management',
+    'product',
+    'place',
 ]
 
 MIDDLEWARE = [
@@ -116,7 +119,7 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": getattr(settings, "DB_NAME", "meshkob_db"),
+        "NAME": getattr(settings, "DB_NAME", "poliz_db"),
         "USER": getattr(settings, "DB_USER", "postgres"),
         "PASSWORD": getattr(settings, "DB_PASSWORD", "postgres"),
         "HOST": getattr(settings, "DB_HOST", "127.0.0.1"),

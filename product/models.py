@@ -23,7 +23,7 @@ class Product(models.Model):
 class ProductUnit(models.Model):
     """ """
     quantity = models.IntegerField(verbose_name="Seedlings quantity")
-    weight = models.DecimalField(verbose_name="Volume", max_length=4, max_digits=2)
+    weight = models.DecimalField(verbose_name="Volume", max_digits=4, decimal_places=2)
 
     class Meta:
         verbose_name = "Product unit"
@@ -32,7 +32,7 @@ class ProductUnit(models.Model):
 
 class ProductDemand(models.Model):
     """ """
-    weight = models.DecimalField(verbose_name="Volume", max_length=4, max_digits=2)
+    weight = models.DecimalField(verbose_name="Volume", max_digits=4, decimal_places=2)
     provider = models.ForeignKey(verbose_name="Provider", to="management.Provider", on_delete=models.CASCADE)
 
     class Meta:
@@ -43,8 +43,8 @@ class ProductDemand(models.Model):
 class ProductProposal(models.Model):
     """ """
     demand = models.ForeignKey(verbose_name="Demand", to="ProductDemand", on_delete=models.CASCADE)
-    weight = models.DecimalField(verbose_name="Volume", max_length=4, max_digits=2)
-    price = models.DecimalField(verbose_name="Price", max_length=8, max_digits=2)
+    weight = models.DecimalField(verbose_name="Volume", max_digits=4, decimal_places=2)
+    price = models.DecimalField(verbose_name="Price", max_digits=8, decimal_places=2)
 
     class Meta:
         verbose_name = "Product proposal"
